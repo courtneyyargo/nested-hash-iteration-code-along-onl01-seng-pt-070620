@@ -1,7 +1,7 @@
 require 'pry'
 
-  # This is the array we will be passing into the remove_strawberry method
-  # contacts = {
+#This is the array we will be passing into the remove_strawberry method
+  #contacts = {
   #   "Jon Snow" => {
   #     name: "Jon",
   #     email: "jon_snow@thewall.we", 
@@ -15,5 +15,11 @@ require 'pry'
   # }
   
 def remove_strawberry(contacts)
-
-end
+  freddy = contacts["Freddy Mercury"]
+   freddy.each do |attribute, data|
+     if attribute == :favorite_ice_cream_flavors
+       data.delete_if {|ice_cream| ice_cream == "strawberry"}
+      end
+    end
+    contacts
+  end
